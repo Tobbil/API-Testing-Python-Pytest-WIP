@@ -1,0 +1,70 @@
+2024-08-07 22:11:41 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:11:41 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/1/ HTTP/11" 200 None
+2024-08-07 22:11:41 - tests.test_endpoints_get - INFO - Checking if status code is 200
+2024-08-07 22:11:41 - tests.test_endpoints_get - INFO - Checking if response body has content
+2024-08-07 22:11:41 - root - INFO - tests/test_endpoints_get.py::test_get_endpoint_resource -- PASSED --
+2024-08-07 22:11:41 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:11:42 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /wrong_endpoint HTTP/11" 404 None
+2024-08-07 22:11:42 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:11:42 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:11:42 - root - INFO - tests/test_endpoints_get.py::test_get_nonexistent_endpoint -- PASSED --
+2024-08-07 22:11:42 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:11:43 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/99999999999999 HTTP/11" 404 None
+2024-08-07 22:11:43 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:11:43 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:11:43 - root - INFO - tests/test_endpoints_get.py::test_get_invalid_resource[99999999999999] -- PASSED --
+2024-08-07 22:11:43 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:11:44 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/-1 HTTP/11" 404 None
+2024-08-07 22:11:44 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:11:44 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:11:44 - root - INFO - tests/test_endpoints_get.py::test_get_invalid_resource[-1] -- PASSED --
+2024-08-07 22:11:44 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:11:45 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/0.5 HTTP/11" 404 None
+2024-08-07 22:11:45 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:11:45 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:11:45 - root - INFO - tests/test_endpoints_get.py::test_get_invalid_resource[0.5] -- PASSED --
+2024-08-07 22:11:45 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:11:46 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/! HTTP/11" 404 None
+2024-08-07 22:11:46 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:11:46 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:11:46 - root - INFO - tests/test_endpoints_get.py::test_get_invalid_resource[!] -- PASSED --
+2024-08-07 22:11:46 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:11:46 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/test HTTP/11" 404 None
+2024-08-07 22:11:46 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:11:46 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:11:46 - root - INFO - tests/test_endpoints_get.py::test_get_invalid_resource[test] -- PASSED --
+2024-08-07 22:12:37 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:12:38 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/1/ HTTP/11" 200 None
+2024-08-07 22:12:38 - tests.test_endpoints_get - INFO - Checking if status code is 200
+2024-08-07 22:12:38 - tests.test_endpoints_get - INFO - Checking if response body has content
+2024-08-07 22:12:38 - root - INFO - tests/test_endpoints_get.py::test_get_endpoint_resource -- PASSED --
+2024-08-07 22:12:38 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:12:39 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /wrong_endpoint HTTP/11" 404 None
+2024-08-07 22:12:39 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:12:39 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:12:39 - root - INFO - tests/test_endpoints_get.py::test_get_nonexistent_endpoint -- PASSED --
+2024-08-07 22:12:39 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:12:39 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/99999999999999 HTTP/11" 404 None
+2024-08-07 22:12:39 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:12:39 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:12:39 - root - INFO - tests/test_endpoints_get.py::test_get_invalid_resource[99999999999999] -- PASSED --
+2024-08-07 22:12:39 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:12:40 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/-1 HTTP/11" 404 None
+2024-08-07 22:12:40 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:12:40 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:12:40 - root - INFO - tests/test_endpoints_get.py::test_get_invalid_resource[-1] -- PASSED --
+2024-08-07 22:12:40 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:12:41 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/0.5 HTTP/11" 404 None
+2024-08-07 22:12:41 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:12:41 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:12:41 - root - INFO - tests/test_endpoints_get.py::test_get_invalid_resource[0.5] -- PASSED --
+2024-08-07 22:12:41 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:12:43 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/! HTTP/11" 404 None
+2024-08-07 22:12:43 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:12:43 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:12:43 - root - INFO - tests/test_endpoints_get.py::test_get_invalid_resource[!] -- PASSED --
+2024-08-07 22:12:43 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.restful-api.dev:443
+2024-08-07 22:12:44 - urllib3.connectionpool - DEBUG - https://api.restful-api.dev:443 "GET /objects/test HTTP/11" 404 None
+2024-08-07 22:12:44 - tests.test_endpoints_get - INFO - Checking if status code is 404
+2024-08-07 22:12:44 - tests.test_endpoints_get - INFO - Checking if error message is present in response body
+2024-08-07 22:12:44 - root - INFO - tests/test_endpoints_get.py::test_get_invalid_resource[test] -- PASSED --
