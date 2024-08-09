@@ -13,9 +13,9 @@ def make_get_request(endpoint):
     return status_code, response_body
 
 
-def make_post_request(endpoint, json):
+def make_post_request(endpoint, json, headers=None):
     url = os.path.join(MAIN_URL, endpoint)
-    response = requests.post(url, json=json)
+    response = requests.post(url, json=json, headers=headers)
     status_code = response.status_code
     response_body = response.json()
     return status_code, response_body
