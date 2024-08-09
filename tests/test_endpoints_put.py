@@ -17,7 +17,7 @@ def test_put_change_existing_resource():
 
     LOGGER.info("Checking if resource was created")
     status_code_get, response_body_get = make_get_request(f"{const.OBJECTS_ENDPOINT}/{resource_id}")
-    assert response_body_get == test_object_with_id
+    assert response_body_get == test_object_with_id, "Resource wasn't created successfully"
 
     LOGGER.info("Updating resource")
     status_code_put, _ = make_put_request(f"{const.OBJECTS_ENDPOINT}/{resource_id}", json=TestObjects.OBJECT_VALID_PUT)
@@ -29,4 +29,4 @@ def test_put_change_existing_resource():
     status_code_get, response_body_get = make_get_request(f"{const.OBJECTS_ENDPOINT}/{resource_id}")
     assert status_code_get == 200, f"Unexpected status code: {status_code_get}"
 
-    assert response_body_get == updated_object_with_id
+    assert response_body_get == updated_object_with_id, "Resource wasn't updated successfully"
