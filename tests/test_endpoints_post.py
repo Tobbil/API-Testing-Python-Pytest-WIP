@@ -30,6 +30,6 @@ def test_created_resource_exists():
     updated_object = TestObjects.OBJECT_VALID.copy()
     updated_object.update({"id": response_id})
 
-    assert status_code_get == 200, f"Unexpected status code: {status_code_get}"  # WHY NOT 201?
+    assert status_code_get == 200, f"Unexpected status code: {status_code_get}"
     assert updated_object == response_body_get, "Created object is different than expected"
 
