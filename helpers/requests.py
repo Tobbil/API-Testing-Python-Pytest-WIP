@@ -19,3 +19,10 @@ def make_post_request(endpoint, json, headers=None):
     status_code = response.status_code
     response_body = response.json()
     return status_code, response_body
+
+def make_put_request(endpoint, json, headers=None):
+    url = os.path.join(MAIN_URL, endpoint)
+    response = requests.put(url, json=json, headers=headers)
+    status_code = response.status_code
+    response_body = response.json()
+    return status_code, response_body
