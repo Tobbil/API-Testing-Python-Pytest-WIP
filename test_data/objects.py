@@ -17,6 +17,6 @@ class TestObjects:
             "Hard disk size": "1 TB",
         },
     }
-    OBJECT_VERY_LARGE_PAYLOAD = {
-        "data": "A" * 100000,
+    OBJECT_TOO_LARGE_PAYLOAD = {
+        "data": "A" * 1000,
     }
