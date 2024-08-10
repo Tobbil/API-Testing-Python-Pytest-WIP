@@ -3,7 +3,7 @@ import pytest
 
 from test_data.constants import Constants as const
 from test_data.objects import TestObjects
-from helpers.requests import make_post_request, make_get_request, make_put_request
+from helpers.requests import make_post_request, make_get_request, make_put_request, make_delete_request
 
 LOGGER = logging.getLogger(__name__)
 
@@ -94,7 +94,7 @@ class TestPostMethod:
 
 
 class TestPutMethod:
-    """Test POST method on '/objects' endpoint"""
+    """Test PUT method on '/objects' endpoint"""
     def test_put_change_existing_resource(self):
         LOGGER.info("Creating resource")
         _, response_body_post = make_post_request(const.OBJECTS_ENDPOINT, json=TestObjects.OBJECT_VALID)
@@ -113,9 +113,33 @@ class TestPutMethod:
         )
         assert status_code_put == const.STATUS_SUCCESS, f"Unexpected status code: {status_code_put}"
 
-        LOGGER.info("Checking if resource was updated")
         updated_object_with_id = TestObjects.OBJECT_VALID_PUT.copy()
         updated_object_with_id.update({"id": resource_id})
+
+        LOGGER.info("Checking if resource was updated")
         status_code_get, response_body_get = make_get_request(f"{const.OBJECTS_ENDPOINT}/{resource_id}")
         assert status_code_get == const.STATUS_SUCCESS, f"Unexpected status code: {status_code_get}"
         assert response_body_get == updated_object_with_id, "Resource wasn't updated successfully"
+    
+
+class TestDeleteMethod:
+    """Test DELETE method on '/objects' endpoint"""
+    def test_delete_resource(self):
+        _, response_body_post = make_post_request(const.OBJECTS_ENDPOINT, json=TestObjects.OBJECT_VALID)
+
+        resource_id = response_body_post.get("id")
+        test_object_with_id = TestObjects.OBJECT_VALID.copy()
+        test_object_with_id.update({"id": resource_id})
+
+        LOGGER.info("Checking if resource was created")
+        status_code_get, response_body_get = make_get_request(f"{const.OBJECTS_ENDPOINT}/{resource_id}")
+        assert response_body_get == test_object_with_id, "Created resource is different than expected"   
+
+        LOGGER.info("Deleting resource")
+        status_code_delete, response_body_delete = make_delete_request(f"{const.OBJECTS_ENDPOINT}/{resource_id}")
+        assert status_code_delete == const.STATUS_SUCCESS, f"Unexpected status code: {status_code_delete}"
+
+        LOGGER.info("Checking if resource was deleted")
+        status_code_get, response_body_get = make_get_request(f"{const.OBJECTS_ENDPOINT}/{resource_id}")
+        assert status_code_get == const.STATUS_NOT_FOUND, f"Unexpected status code: {status_code_delete}"
+        assert response_body_get != test_object_with_id, "Resource still exists"  

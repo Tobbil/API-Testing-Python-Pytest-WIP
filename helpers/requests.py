@@ -26,3 +26,10 @@ def make_put_request(endpoint, json, headers=None):
     status_code = response.status_code
     response_body = response.json()
     return status_code, response_body
+
+def make_delete_request(endpoint):
+    url = os.path.join(MAIN_URL, endpoint)
+    response = requests.delete(url)
+    status_code = response.status_code
+    response_body = response.json()
+    return status_code, response_body
